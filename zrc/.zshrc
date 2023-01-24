@@ -25,7 +25,15 @@ source $HOME/.spaceshiprc.zsh
 alias src=". ~/.zshrc"
 alias apt="sudo apt-get"
 alias zreload="src && exec zsh"
-alias gpush="git commit -m 'gpush' && git push -u origin main"
+
+#############
+# FUNCTIONS #
+#############
+
+function gpush() {
+    git commit -m "gpush"
+    git push
+}
 
 #####################################################
 #  ________  _______  _____  _____  _____   ______  #
