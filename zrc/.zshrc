@@ -12,7 +12,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="spaceship"
 
 source $ZSH/oh-my-zsh.sh
-source ~/.spaceshiprc.zsh
+source $HOME/.spaceshiprc.zsh
 
 ######################
 # User configuration #
