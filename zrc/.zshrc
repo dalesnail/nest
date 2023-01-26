@@ -1,27 +1,25 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+bindkey -e
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-#
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
-
-source $ZSH/oh-my-zsh.sh
-source $HOME/.spaceshiprc.zsh
-
 ######################
 # User configuration #
 ######################
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+###########
+# ALIASES #
+###########
 
 alias src=". ~/.zshrc"
 alias apt="sudo apt-get"
@@ -59,3 +57,17 @@ zplug "zsh-users/zsh-autosuggestions"
 
 # Then, source plugins and add commands to $PATH
 zplug load
+
+##################################################################################
+#  ________  _________  ________  ________  ________  ___  ___  ___  ________   
+# |\   ____\|\___   ___\\   __  \|\   __  \|\   ____\|\  \|\  \|\  \|\   __  \  
+# \ \  \___|\|___ \  \_\ \  \|\  \ \  \|\  \ \  \___|\ \  \\\  \ \  \ \  \|\  \ 
+#  \ \_____  \   \ \  \ \ \   __  \ \   _  _\ \_____  \ \   __  \ \  \ \   ____\
+#   \|____|\  \   \ \  \ \ \  \ \  \ \  \\  \\|____|\  \ \  \ \  \ \  \ \  \___|
+#     ____\_\  \   \ \__\ \ \__\ \__\ \__\\ _\ ____\_\  \ \__\ \__\ \__\ \__\   
+#    |\_________\   \|__|  \|__|\|__|\|__|\|__|\_________\|__|\|__|\|__|\|__|   
+#    \|_________|                             \|_________|                      
+#
+###################################################################################
+
+eval "$(starship init zsh)"
