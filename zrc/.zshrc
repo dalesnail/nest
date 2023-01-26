@@ -8,14 +8,16 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
 ######################
 # User configuration #
 ######################
+
+plugins=(
+	1password
+)
 
 ###########
 # ALIASES #
@@ -24,7 +26,7 @@ export PATH=/usr/local/bin:$PATH
 alias src=". ~/.zshrc"
 alias apt="sudo apt-get"
 alias zreload="src && exec zsh"
-alias ls="ls -a"
+alias ls="exa -Ta --icons --level=1 --group-directories-first"
 
 #############
 # FUNCTIONS #
@@ -49,11 +51,21 @@ function gpush() {
 # Load plugins #
 ################ 
 
-source ~/.zplug/init.zsh
+# Ensure zplug is installed
+if [[ ! -d "$ZPLUG_HOME" ]]; then
+  git clone https://github.com/zplug/zplug "$ZPLUG_HOME"
+  source "$ZPLUG_HOME/init.zsh" && zplug --self-manage update
+else
+  source "$ZPLUG_HOME/init.zsh"
+fi
 
 zplug "agkozak/zsh-z"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-history-substring-search", defer:3
+zplug "zsh-users/zsh-completions", depth:1
+zplug "agpenton/1password-zsh-plugin"
+
 
 # Then, source plugins and add commands to $PATH
 zplug load
@@ -71,3 +83,4 @@ zplug load
 ###################################################################################
 
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
