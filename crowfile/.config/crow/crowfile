@@ -1,0 +1,5 @@
+Editor: vim
+# The above line is for declaring your editor, line should stay at the very top
+-<<<>  crowfile: /home/ooo/.config/crow/crowfile
+-<<<>  zrc: /home/ooo/.zshrc
+
