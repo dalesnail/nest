@@ -51,13 +51,7 @@ function gpush() {
 # Load plugins #
 ################ 
 
-# Ensure zplug is installed
-if [[ ! -d "$ZPLUG_HOME" ]]; then
-  git clone https://github.com/zplug/zplug "$ZPLUG_HOME"
-  source "$ZPLUG_HOME/init.zsh" && zplug --self-manage update
-else
-  source "$ZPLUG_HOME/init.zsh"
-fi
+source $HOME/.zplug/init.zsh
 
 zplug "agkozak/zsh-z"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2

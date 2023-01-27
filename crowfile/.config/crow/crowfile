@@ -3,3 +3,4 @@ Editor: vim
 -<<<>  crowfile: /home/ooo/.config/crow/crowfile
 -<<<>  zrc: /home/ooo/.zshrc
 
+-<<<>  nu: /home/ooo/.config/nushell/config.nu
